@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import jpabook.jpashop.domain.item.Book;
 import jpabook.jpashop.domain.item.Item;
 import jpabook.jpashop.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;
@@ -19,6 +20,14 @@ public class ItemService {
 	@Transactional //쓰기 트랜젝션 on
 	public void saveItem(Item item) {
 		itemRepository.save(item);
+	}
+
+	@Transactional
+	public void updateItem(Long itemId, String name, int price, int stockQuantity) {
+		Item findItem = itemRepository.findOne(itemId);
+		findItem.setName(name);
+		findItem.setPrice(price);
+		findItem.setStockQuantity(stockQuantity);
 	}
 
 	public List<Item> findItems() {
