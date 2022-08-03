@@ -17,6 +17,7 @@ import org.springframework.util.StringUtils;
 
 import jpabook.jpashop.domain.Member;
 import jpabook.jpashop.domain.Order;
+import jpabook.jpashop.repository.order.simplequery.OrderSimpleQueryDto;
 import lombok.RequiredArgsConstructor;
 
 @Repository
@@ -120,5 +121,14 @@ public class OrderRepository {
 	 * 3. Querydsl
 	 * 권장 O
 	 */
+	// 이건 나중에
+
+	//JPQL Fetch join
+	public List<Order> findAllWithMemberDelivery() {
+		return em.createQuery("select o from Order o" +
+				" join fetch o.member" +
+				" join fetch o.delivery", Order.class)
+			.getResultList();
+	}
 }
 
