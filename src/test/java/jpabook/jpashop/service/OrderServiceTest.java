@@ -33,8 +33,7 @@ public class OrderServiceTest {
 	public void 상품주문() throws Exception {
 	    //given
 		Member member = createMember();
-		Book book = createBook("시골 JPA", 10000, 10)
-			;
+		Book book = createBook("시골 JPA", 10000, 10);
 		int orderCount = 2;
 
 	    //when
