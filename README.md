@@ -159,9 +159,9 @@
 
     ```yaml
     spring:
-    	jpa:
-    			properties:
-    					default_batch_fetch_size: 100
+      jpa:
+    		properties:
+    			default_batch_fetch_size: 100
     ```
 
   - 각자 적용
