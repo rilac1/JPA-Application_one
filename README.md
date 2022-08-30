@@ -120,7 +120,7 @@
 
 테스트에 있는 application.yml 파일은 기본적으로 인메모리로 돌아가기 때문에 별도의 설정정보는 넣지 않아도 된다. (logging을 제외하고 전부 비어두자)
 
-## JPA 활용 2편
+# JPA 활용 2편
 
 ### 권장 순서
 
@@ -200,12 +200,3 @@
 
 - Open Session In View: 하이버네이트
 - Open EntityManagerin In View: JPA
-
-#### On/Off
-
-- OSIV가 켜져있다면 트랜젝션 범위를 벗어나면  
-- 
-
-켜져 있다면 트랜잭션
-
-JPA의 경우 기본적으로 OSIV가 켜져있다.
